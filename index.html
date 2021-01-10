@@ -1,0 +1,68 @@
+<!DOCTYPE html> 
+<html lang="fr"> 
+    <head> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="script.js"></script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AJAX ECF</title>
+    </head> 
+    <body>
+        <div class="container">
+            <h1 class="text-center">AJAX ECF</h1>
+            <div>
+                <!-- Formulaire pour ajouter un nouvel utilisateur -->
+                <form>
+                    <div class="form-group">
+                      <label> USER ID </label>
+                      <input type="number" class="form-control" id="userid" placeholder="1" required>
+                    </div>
+
+                    <div class="form-group">
+                      <label> TITLE </label>
+                      <input type="text" class="form-control" id="title" placeholder="I'm a Title" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label> BODY </label>
+                        <input type="text" class="form-control" id="body" placeholder="I'm a body" required>
+                    </div>
+                    
+                    <button type="button" onclick="newUser()" class="btn btn-primary float-right" >Add employees</button>
+                </form>
+            </div>
+            <!-- Création de la table pour afficher les users-->
+            <table id="tables" class="table table-striped">
+                <tr class="text-center">
+                    <th>UserId</th>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Body</th>
+                    <th>More...</th>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Modal pour afficher l'utilisateur -->
+        <div class="modal fade" id="modalShow" tabindex="-1" role="dialog" aria-labelledby="modalShowLabel"
+        aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title"> Détails de l'employée</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body" id="modalContent"> 
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </body>
+</html> 
